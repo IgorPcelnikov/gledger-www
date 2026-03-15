@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "financial management",
     "automation",
   ],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "GLedger.ai — AI-Powered Accounting Made Simple",
     description:
