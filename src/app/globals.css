@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #202124;
+  --foreground: #1a1a2e;
   --primary: #4285F4;
   --primary-dark: #1a73e8;
   --primary-light: #e8f0fe;
@@ -12,7 +12,7 @@
   --yellow: #FBBC05;
   --surface: #f8f9fa;
   --surface-alt: #f1f3f4;
-  --border: #dadce0;
+  --border: #e2e5e9;
   --text-secondary: #5f6368;
 }
 
@@ -37,35 +37,32 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Refined animations */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-in-up-delay-1 {
-  animation: fade-in-up 0.6s ease-out 0.15s forwards;
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
   opacity: 0;
 }
 
 .animate-fade-in-up-delay-2 {
-  animation: fade-in-up 0.6s ease-out 0.3s forwards;
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s forwards;
   opacity: 0;
 }
 
 .animate-fade-in-up-delay-3 {
-  animation: fade-in-up 0.6s ease-out 0.45s forwards;
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.36s forwards;
   opacity: 0;
 }
 
@@ -76,5 +73,26 @@ body {
 
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradient-shift 6s ease infinite;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Overline style for section labels */
+.section-overline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Subtle noise texture */
+.noise-bg {
+  position: relative;
+}
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
 }

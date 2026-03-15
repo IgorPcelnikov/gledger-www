@@ -8,7 +8,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white/80 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-white/90 backdrop-blur-lg">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/">
           <Logo />
@@ -58,7 +58,7 @@ export default function Header() {
           </a>
           <a
             href="https://portal.gledger.ai"
-            className="rounded-lg bg-gradient-to-r from-primary to-primary-dark px-4 py-2 text-sm font-medium text-white shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30"
+            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
           >
             Get Started Free
           </a>
