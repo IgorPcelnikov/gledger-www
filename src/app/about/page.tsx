@@ -44,12 +44,15 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-primary-light/40 to-white py-24">
+      <section className="bg-gradient-to-b from-primary-light/40 via-green-50/20 to-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Accounting should be{" "}
-              <span className="text-primary">accessible</span> to everyone
+              <span className="bg-gradient-to-r from-primary to-green bg-clip-text text-transparent">
+                accessible
+              </span>{" "}
+              to everyone
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-text-secondary">
               GLedger was born from a simple frustration: why does accounting
@@ -71,16 +74,16 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-text-secondary">
                 <p>
-                  We&apos;re a team of engineers and product thinkers at
-                  DynamicSway who believe that financial tools should work for
-                  people, not against them.
+                  We&apos;re a team of engineers and product thinkers who
+                  believe that financial tools should work for people, not
+                  against them.
                 </p>
                 <p>
                   Too many small businesses struggle with accounting — not
                   because the concepts are hard, but because the software makes
                   it hard. We saw an opportunity to use modern AI to bridge the
-                  gap between &quot;I need to record this expense&quot; and
-                  a proper double-entry journal entry.
+                  gap between &quot;I need to record this expense&quot; and a
+                  proper double-entry journal entry.
                 </p>
                 <p>
                   GLedger is built on Google Cloud, powered by Gemini AI, and
@@ -92,22 +95,30 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-border bg-surface p-6 text-center">
-                <div className="text-3xl font-bold text-primary">2026</div>
+              <div className="rounded-2xl border border-border bg-gradient-to-br from-surface to-primary-light/20 p-6 text-center">
+                <div className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-3xl font-bold text-transparent">
+                  2026
+                </div>
                 <p className="mt-1 text-sm text-text-secondary">Founded</p>
               </div>
-              <div className="rounded-2xl border border-border bg-surface p-6 text-center">
-                <div className="text-3xl font-bold text-green">AI-First</div>
+              <div className="rounded-2xl border border-border bg-gradient-to-br from-surface to-green-50/40 p-6 text-center">
+                <div className="bg-gradient-to-r from-green to-green-dark bg-clip-text text-3xl font-bold text-transparent">
+                  AI-First
+                </div>
                 <p className="mt-1 text-sm text-text-secondary">Architecture</p>
               </div>
-              <div className="rounded-2xl border border-border bg-surface p-6 text-center">
-                <div className="text-3xl font-bold text-primary">GCP</div>
+              <div className="rounded-2xl border border-border bg-gradient-to-br from-surface to-primary-light/30 p-6 text-center">
+                <div className="bg-gradient-to-r from-primary to-green bg-clip-text text-3xl font-bold text-transparent">
+                  Cloud
+                </div>
                 <p className="mt-1 text-sm text-text-secondary">
-                  Infrastructure
+                  Native Infrastructure
                 </p>
               </div>
-              <div className="rounded-2xl border border-border bg-surface p-6 text-center">
-                <div className="text-3xl font-bold text-green">Go + Next</div>
+              <div className="rounded-2xl border border-border bg-gradient-to-br from-surface to-green-50/30 p-6 text-center">
+                <div className="bg-gradient-to-r from-green to-primary bg-clip-text text-3xl font-bold text-transparent">
+                  Go + Next
+                </div>
                 <p className="mt-1 text-sm text-text-secondary">Tech Stack</p>
               </div>
             </div>
@@ -116,7 +127,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-surface py-24">
+      <section className="bg-gradient-to-b from-surface via-surface to-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
@@ -130,7 +141,7 @@ export default function AboutPage() {
                 key={value.title}
                 className="rounded-2xl border border-border bg-white p-8"
               >
-                <div className="inline-flex rounded-xl bg-primary-light p-3 text-primary">
+                <div className="inline-flex rounded-xl bg-gradient-to-br from-primary-light to-green-50/50 p-3 text-primary">
                   {value.icon}
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-foreground">
@@ -157,7 +168,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="https://portal.gledger.ai"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-8 text-base font-medium text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-primary to-primary-dark px-8 text-base font-medium text-white shadow-lg shadow-primary/25 transition-all hover:shadow-xl"
             >
               Try GLedger Free
             </a>

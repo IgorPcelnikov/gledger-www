@@ -3,13 +3,7 @@ import Link from "next/link";
 const features = [
   {
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-6 w-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.5">
         <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
       </svg>
     ),
@@ -17,17 +11,11 @@ const features = [
     description:
       "Ask questions in plain English. GLedger's AI workspace helps you create journal entries, run reports, and understand your financials — no jargon required.",
     color: "text-primary",
-    bg: "bg-primary-light",
+    bg: "bg-gradient-to-br from-primary-light to-blue-50",
   },
   {
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-6 w-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.5">
         <path d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
       </svg>
     ),
@@ -35,53 +23,35 @@ const features = [
     description:
       "Generate balance sheets, income statements, and trial balances instantly. Export to PDF or share with your team — always up to date.",
     color: "text-green",
-    bg: "bg-green-50",
+    bg: "bg-gradient-to-br from-green-50 to-emerald-50",
   },
   {
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-6 w-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.5">
         <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
       </svg>
     ),
     title: "Get Started in Minutes",
     description:
       "No complex setup. No training needed. Import your chart of accounts or start fresh — GLedger adapts to how you work, not the other way around.",
-    color: "text-yellow",
-    bg: "bg-yellow-50",
+    color: "text-primary-dark",
+    bg: "bg-gradient-to-br from-primary-light/60 to-green-50/60",
   },
   {
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-6 w-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.5">
         <path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
       </svg>
     ),
     title: "Enterprise-Grade Security",
     description:
       "Your financial data is protected with bank-level encryption, SOC 2 compliance, and runs on Google Cloud infrastructure. Data never leaves your control.",
-    color: "text-red",
-    bg: "bg-red-50",
+    color: "text-green-dark",
+    bg: "bg-gradient-to-br from-green-50 to-primary-light/30",
   },
   {
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-6 w-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.5">
         <path d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
       </svg>
     ),
@@ -89,17 +59,11 @@ const features = [
     description:
       "Multi-company support, role-based access, and real-time collaboration. Everyone sees the same numbers, always in sync.",
     color: "text-primary",
-    bg: "bg-primary-light",
+    bg: "bg-gradient-to-br from-primary-light to-indigo-50",
   },
   {
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-6 w-6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
       </svg>
     ),
@@ -107,7 +71,7 @@ const features = [
     description:
       "Post journal entries and see your financial position update instantly. Period management, fiscal year close, and audit trails built in.",
     color: "text-green",
-    bg: "bg-green-50",
+    bg: "bg-gradient-to-br from-green-50 to-teal-50",
   },
 ];
 
@@ -134,18 +98,14 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-white to-green-50/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-white to-green-50/60" />
+        <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/5 to-green/5 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-green/5 to-primary/5 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 pb-24 pt-20 sm:pt-32 lg:pt-40">
           <div className="mx-auto max-w-3xl text-center">
             <div className="animate-fade-in-up">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary-light px-4 py-1.5 text-sm font-medium text-primary-dark">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-4 w-4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
+              <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-light to-green-50 px-4 py-1.5 text-sm font-medium text-primary-dark ring-1 ring-primary/10">
+                <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2">
                   <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
                 </svg>
                 Powered by AI
@@ -154,7 +114,7 @@ export default function Home() {
 
             <h1 className="animate-fade-in-up-delay-1 mt-8 text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl">
               Accounting that{" "}
-              <span className="bg-gradient-to-r from-primary to-green bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-primary via-primary-dark to-green bg-clip-text text-transparent animate-gradient">
                 works for you
               </span>
             </h1>
@@ -168,7 +128,7 @@ export default function Home() {
             <div className="animate-fade-in-up-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="https://portal.gledger.ai"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-primary px-8 text-base font-medium text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30"
+                className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-primary to-primary-dark px-8 text-base font-medium text-white shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/30"
               >
                 Get Started Free
               </a>
@@ -187,8 +147,8 @@ export default function Home() {
 
           {/* Hero visual */}
           <div className="mx-auto mt-16 max-w-4xl">
-            <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-2xl shadow-primary/5">
-              <div className="flex items-center gap-2 border-b border-border bg-surface px-4 py-3">
+            <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-2xl shadow-primary/10">
+              <div className="flex items-center gap-2 border-b border-border bg-gradient-to-r from-surface to-surface-alt px-4 py-3">
                 <div className="h-3 w-3 rounded-full bg-red/60" />
                 <div className="h-3 w-3 rounded-full bg-yellow/60" />
                 <div className="h-3 w-3 rounded-full bg-green/60" />
@@ -197,9 +157,9 @@ export default function Home() {
                 </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="border-r border-border bg-surface-alt/50 p-6 md:col-span-1">
+                <div className="border-r border-border bg-gradient-to-b from-surface-alt/50 to-surface/30 p-6 md:col-span-1">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2 rounded-lg bg-primary-light px-3 py-2 text-sm font-medium text-primary-dark">
+                    <div className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary-light to-blue-50 px-3 py-2 text-sm font-medium text-primary-dark">
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="1.5">
                         <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
                       </svg>
@@ -226,13 +186,13 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-6 md:col-span-2">
-                  <div className="mb-4 rounded-xl bg-surface p-4">
+                  <div className="mb-4 rounded-xl bg-gradient-to-r from-surface to-surface-alt/50 p-4">
                     <p className="text-sm text-text-secondary">You asked:</p>
                     <p className="mt-1 text-sm font-medium text-foreground">
                       &quot;Record the $2,400 annual insurance payment we made today&quot;
                     </p>
                   </div>
-                  <div className="rounded-xl border border-primary/20 bg-primary-light/30 p-4">
+                  <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary-light/30 to-green-50/20 p-4">
                     <div className="flex items-center gap-2">
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-primary" stroke="currentColor" strokeWidth="1.5">
                         <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
@@ -246,7 +206,7 @@ export default function Home() {
                     </p>
                     <div className="mt-3 overflow-hidden rounded-lg border border-border bg-white">
                       <table className="w-full text-left text-sm">
-                        <thead className="border-b border-border bg-surface text-xs text-text-secondary">
+                        <thead className="border-b border-border bg-gradient-to-r from-surface to-surface-alt/50 text-xs text-text-secondary">
                           <tr>
                             <th className="px-3 py-2">Account</th>
                             <th className="px-3 py-2 text-right">Debit</th>
@@ -255,28 +215,20 @@ export default function Home() {
                         </thead>
                         <tbody className="divide-y divide-border">
                           <tr>
-                            <td className="px-3 py-2 font-medium">
-                              1400 · Prepaid Insurance
-                            </td>
-                            <td className="px-3 py-2 text-right text-green">
-                              $2,400.00
-                            </td>
+                            <td className="px-3 py-2 font-medium">1400 · Prepaid Insurance</td>
+                            <td className="px-3 py-2 text-right text-green">$2,400.00</td>
                             <td className="px-3 py-2 text-right">—</td>
                           </tr>
                           <tr>
-                            <td className="px-3 py-2 font-medium">
-                              1000 · Cash
-                            </td>
+                            <td className="px-3 py-2 font-medium">1000 · Cash</td>
                             <td className="px-3 py-2 text-right">—</td>
-                            <td className="px-3 py-2 text-right text-red">
-                              $2,400.00
-                            </td>
+                            <td className="px-3 py-2 text-right text-red">$2,400.00</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                     <div className="mt-3 flex gap-2">
-                      <button className="rounded-lg bg-primary px-3 py-1.5 text-xs font-medium text-white">
+                      <button className="rounded-lg bg-gradient-to-r from-primary to-primary-dark px-3 py-1.5 text-xs font-medium text-white">
                         Post Entry
                       </button>
                       <button className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-text-secondary">
@@ -292,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="bg-surface py-24">
+      <section id="features" className="bg-gradient-to-b from-surface via-surface to-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -310,9 +262,7 @@ export default function Home() {
                 key={feature.title}
                 className="group rounded-2xl border border-border bg-white p-8 transition-all hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
               >
-                <div
-                  className={`inline-flex rounded-xl ${feature.bg} p-3 ${feature.color}`}
-                >
+                <div className={`inline-flex rounded-xl ${feature.bg} p-3 ${feature.color}`}>
                   {feature.icon}
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-foreground">
@@ -328,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section className="bg-white py-24">
+      <section className="bg-gradient-to-b from-white via-white to-primary-light/20 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -342,7 +292,7 @@ export default function Home() {
           <div className="mt-16 grid gap-8 sm:grid-cols-3">
             {steps.map((step) => (
               <div key={step.number} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-white">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary-dark text-xl font-bold text-white shadow-lg shadow-primary/20">
                   {step.number}
                 </div>
                 <h3 className="mt-6 text-lg font-semibold text-foreground">
@@ -358,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* Social proof */}
-      <section className="bg-surface py-24">
+      <section className="bg-gradient-to-b from-primary-light/20 via-surface to-surface py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -371,20 +321,26 @@ export default function Home() {
           </div>
 
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
-            <div className="rounded-2xl border border-border bg-white p-8 text-center">
-              <div className="text-4xl font-bold text-primary">5 min</div>
+            <div className="rounded-2xl border border-border bg-gradient-to-br from-white to-primary-light/20 p-8 text-center">
+              <div className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-4xl font-bold text-transparent">
+                5 min
+              </div>
               <p className="mt-2 text-sm text-text-secondary">
                 Average setup time
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-white p-8 text-center">
-              <div className="text-4xl font-bold text-green">10x</div>
+            <div className="rounded-2xl border border-border bg-gradient-to-br from-white to-green-50/60 p-8 text-center">
+              <div className="bg-gradient-to-r from-green to-green-dark bg-clip-text text-4xl font-bold text-transparent">
+                10x
+              </div>
               <p className="mt-2 text-sm text-text-secondary">
                 Faster than manual bookkeeping
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-white p-8 text-center">
-              <div className="text-4xl font-bold text-primary">99.9%</div>
+            <div className="rounded-2xl border border-border bg-gradient-to-br from-white to-primary-light/20 p-8 text-center">
+              <div className="bg-gradient-to-r from-primary to-green bg-clip-text text-4xl font-bold text-transparent">
+                99.9%
+              </div>
               <p className="mt-2 text-sm text-text-secondary">
                 Uptime on Google Cloud
               </p>
@@ -394,7 +350,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark py-24">
+      <section className="bg-gradient-to-br from-primary via-primary-dark to-green-dark py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to simplify your accounting?

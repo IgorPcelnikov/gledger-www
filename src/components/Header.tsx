@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "./Logo";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,13 +10,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <span className="text-sm font-bold text-white">G</span>
-          </div>
-          <span className="text-xl font-semibold tracking-tight text-foreground">
-            GLedger<span className="text-primary">.ai</span>
-          </span>
+        <Link href="/">
+          <Logo />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -62,7 +58,7 @@ export default function Header() {
           </a>
           <a
             href="https://portal.gledger.ai"
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+            className="rounded-lg bg-gradient-to-r from-primary to-primary-dark px-4 py-2 text-sm font-medium text-white shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30"
           >
             Get Started Free
           </a>
@@ -138,7 +134,7 @@ export default function Header() {
             </a>
             <a
               href="https://portal.gledger.ai"
-              className="rounded-lg bg-primary px-3 py-2 text-center text-sm font-medium text-white"
+              className="rounded-lg bg-gradient-to-r from-primary to-primary-dark px-3 py-2 text-center text-sm font-medium text-white"
             >
               Get Started Free
             </a>

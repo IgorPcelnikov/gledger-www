@@ -1,19 +1,38 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import type { Metadata } from "next";
+import { useState, useRef, type FormEvent } from "react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [selectOpen, setSelectOpen] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const selectRef = useRef<HTMLDivElement>(null);
+
+  const topics = [
+    { value: "general", label: "General inquiry" },
+    { value: "pricing", label: "Pricing & plans" },
+    { value: "enterprise", label: "Enterprise sales" },
+    { value: "support", label: "Technical support" },
+    { value: "partnership", label: "Partnership" },
+  ];
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     // TODO: wire up to API (SendGrid / Resend / Google Cloud Functions)
+    // TODO: validate Turnstile token server-side
     setSubmitted(true);
   }
 
+  function handleTopicSelect(value: string) {
+    setSelectedTopic(value);
+    setSelectOpen(false);
+  }
+
+  const selectedLabel =
+    topics.find((t) => t.value === selectedTopic)?.label ?? "";
+
   return (
-    <section className="bg-white py-24">
+    <section className="bg-gradient-to-b from-primary-light/30 via-white to-white py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -27,12 +46,12 @@ export default function ContactPage() {
 
         <div className="mx-auto mt-16 max-w-lg">
           {submitted ? (
-            <div className="rounded-2xl border border-green/30 bg-green-50 p-8 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-green/10">
+            <div className="rounded-2xl border border-green/30 bg-gradient-to-br from-green-50 to-white p-8 text-center">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-green to-green-dark">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="h-7 w-7 text-green"
+                  className="h-7 w-7 text-white"
                   stroke="currentColor"
                   strokeWidth="2"
                 >
@@ -118,29 +137,74 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* Custom styled select */}
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-foreground"
-                >
+                <label className="block text-sm font-medium text-foreground">
                   Subject
                 </label>
-                <select
-                  id="subject"
+                <input
+                  type="hidden"
                   name="subject"
+                  value={selectedTopic}
                   required
-                  className="mt-2 block w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/10"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select a topic
-                  </option>
-                  <option value="general">General inquiry</option>
-                  <option value="pricing">Pricing & plans</option>
-                  <option value="enterprise">Enterprise sales</option>
-                  <option value="support">Technical support</option>
-                  <option value="partnership">Partnership</option>
-                </select>
+                />
+                <div className="relative mt-2" ref={selectRef}>
+                  <button
+                    type="button"
+                    onClick={() => setSelectOpen(!selectOpen)}
+                    className={`flex w-full items-center justify-between rounded-xl border bg-white px-4 py-3 text-left text-sm outline-none transition-colors ${
+                      selectOpen
+                        ? "border-primary ring-2 ring-primary/10"
+                        : "border-border"
+                    } ${selectedTopic ? "text-foreground" : "text-text-secondary/50"}`}
+                  >
+                    <span>{selectedLabel || "Select a topic"}</span>
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className={`h-5 w-5 text-text-secondary transition-transform ${
+                        selectOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  {selectOpen && (
+                    <div className="absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-border bg-white shadow-lg shadow-primary/5">
+                      {topics.map((topic) => (
+                        <button
+                          key={topic.value}
+                          type="button"
+                          onClick={() => handleTopicSelect(topic.value)}
+                          className={`flex w-full items-center px-4 py-3 text-left text-sm transition-colors hover:bg-primary-light/50 ${
+                            selectedTopic === topic.value
+                              ? "bg-primary-light font-medium text-primary-dark"
+                              : "text-foreground"
+                          }`}
+                        >
+                          {selectedTopic === topic.value && (
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="mr-2 h-4 w-4 text-primary"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          )}
+                          {topic.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div>
@@ -160,15 +224,25 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* Cloudflare Turnstile */}
+              <div
+                className="cf-turnstile"
+                data-sitekey={
+                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"
+                }
+                data-theme="light"
+              />
+
               <button
                 type="submit"
-                className="flex h-12 w-full items-center justify-center rounded-xl bg-primary text-sm font-medium text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-xl"
+                className="flex h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-primary to-primary-dark text-sm font-medium text-white shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/30"
               >
                 Send Message
               </button>
 
               <p className="text-center text-xs text-text-secondary">
-                We typically respond within one business day.
+                We typically respond within one business day. Protected by
+                Cloudflare Turnstile.
               </p>
             </form>
           )}

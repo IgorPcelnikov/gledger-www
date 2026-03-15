@@ -28,11 +28,12 @@ const plans = [
   {
     name: "Pro",
     price: "$29",
-    period: "per month",
+    period: "per user / month",
     description:
-      "For growing businesses that need more power and flexibility.",
+      "For growing businesses that need more power, flexibility, and industry-specific tools.",
     cta: "Start Free Trial",
-    ctaStyle: "bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/25",
+    ctaStyle:
+      "bg-gradient-to-r from-primary to-primary-dark text-white hover:shadow-lg hover:shadow-primary/30 shadow-md shadow-primary/20",
     popular: true,
     features: [
       "Up to 5 companies",
@@ -41,6 +42,9 @@ const plans = [
       "All financial reports",
       "AI workspace (unlimited)",
       "Multi-user access & roles",
+      "Extensions Marketplace access",
+      "Industry extensions (retail, SaaS, manufacturing & more)",
+      "System integrations (banks, payment processors, ERP connectors)",
       "Period management & fiscal year close",
       "Data export (CSV, PDF)",
       "Priority email support",
@@ -62,7 +66,7 @@ const plans = [
       "Everything in Pro",
       "SSO / SAML authentication",
       "Audit log & compliance tools",
-      "Custom integrations",
+      "Custom & private extensions",
       "Dedicated account manager",
       "SLA & uptime guarantees",
       "On-premise deployment option",
@@ -72,112 +76,149 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Simple, transparent pricing
-          </h1>
-          <p className="mt-4 text-lg text-text-secondary">
-            Start free. Upgrade when you&apos;re ready. No hidden fees, no
-            surprises.
-          </p>
-        </div>
+    <>
+      <section className="bg-gradient-to-b from-primary-light/40 via-white to-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              Simple, transparent pricing
+            </h1>
+            <p className="mt-4 text-lg text-text-secondary">
+              Start free. Upgrade when you&apos;re ready. No hidden fees, no
+              surprises.
+            </p>
+          </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative rounded-2xl border p-8 transition-all ${
-                plan.popular
-                  ? "border-primary bg-white shadow-xl shadow-primary/10 ring-1 ring-primary"
-                  : "border-border bg-white hover:border-primary/20 hover:shadow-lg"
-              }`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-primary px-4 py-1 text-xs font-semibold text-white">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {plan.name}
-                </h3>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  {plan.period && (
-                    <span className="text-sm text-text-secondary">
-                      / {plan.period}
+          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative rounded-2xl border p-8 transition-all ${
+                  plan.popular
+                    ? "border-primary bg-gradient-to-b from-white to-primary-light/20 shadow-xl shadow-primary/10 ring-1 ring-primary"
+                    : "border-border bg-white hover:border-primary/20 hover:shadow-lg"
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span className="rounded-full bg-gradient-to-r from-primary to-primary-dark px-4 py-1 text-xs font-semibold text-white shadow-md shadow-primary/20">
+                      Most Popular
                     </span>
+                  </div>
+                )}
+
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {plan.name}
+                  </h3>
+                  <div className="mt-4 flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-foreground">
+                      {plan.price}
+                    </span>
+                    {plan.period && (
+                      <span className="text-sm text-text-secondary">
+                        / {plan.period}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-3 text-sm text-text-secondary">
+                    {plan.description}
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  {plan.ctaHref ? (
+                    <Link
+                      href={plan.ctaHref}
+                      className={`flex h-11 w-full items-center justify-center rounded-xl text-sm font-medium transition-all ${plan.ctaStyle}`}
+                    >
+                      {plan.cta}
+                    </Link>
+                  ) : (
+                    <a
+                      href="https://portal.gledger.ai"
+                      className={`flex h-11 w-full items-center justify-center rounded-xl text-sm font-medium transition-all ${plan.ctaStyle}`}
+                    >
+                      {plan.cta}
+                    </a>
                   )}
                 </div>
-                <p className="mt-3 text-sm text-text-secondary">
-                  {plan.description}
-                </p>
-              </div>
 
-              <div className="mt-8">
-                {plan.ctaHref ? (
-                  <Link
-                    href={plan.ctaHref}
-                    className={`flex h-11 w-full items-center justify-center rounded-xl text-sm font-medium transition-all ${plan.ctaStyle}`}
-                  >
-                    {plan.cta}
-                  </Link>
-                ) : (
-                  <a
-                    href="https://portal.gledger.ai"
-                    className={`flex h-11 w-full items-center justify-center rounded-xl text-sm font-medium transition-all ${plan.ctaStyle}`}
-                  >
-                    {plan.cta}
-                  </a>
-                )}
+                <ul className="mt-8 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="mt-0.5 h-5 w-5 shrink-0 text-green"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                      <span className="text-sm text-text-secondary">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+            ))}
+          </div>
 
-              <ul className="mt-8 space-y-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="mt-0.5 h-5 w-5 shrink-0 text-green"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="m4.5 12.75 6 6 9-13.5" />
-                    </svg>
-                    <span className="text-sm text-text-secondary">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+          {/* Extensions callout */}
+          <div className="mx-auto mt-20 max-w-3xl rounded-2xl border border-primary/20 bg-gradient-to-br from-primary-light/40 via-white to-green-50/40 p-8 text-center sm:p-12">
+            <div className="inline-flex rounded-full bg-gradient-to-r from-primary to-green px-4 py-1.5 text-xs font-semibold text-white shadow-md">
+              Coming Soon
             </div>
-          ))}
-        </div>
+            <h3 className="mt-5 text-2xl font-bold text-foreground">
+              Extensions Marketplace
+            </h3>
+            <p className="mx-auto mt-3 max-w-xl text-text-secondary">
+              Extend GLedger with industry-specific modules and third-party
+              integrations. Connect to your bank, payment processor, inventory
+              system, or build your own custom extensions. Tailored solutions
+              for retail, SaaS, construction, healthcare, and more.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {[
+                "Retail & E-commerce",
+                "SaaS & Subscriptions",
+                "Manufacturing",
+                "Healthcare",
+                "Construction",
+                "Bank Feeds",
+                "Stripe",
+                "Shopify",
+              ].map((ext) => (
+                <span
+                  key={ext}
+                  className="rounded-full border border-border bg-white px-3 py-1.5 text-xs font-medium text-text-secondary"
+                >
+                  {ext}
+                </span>
+              ))}
+            </div>
+          </div>
 
-        {/* FAQ teaser */}
-        <div className="mx-auto mt-24 max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-foreground">
-            Questions? We&apos;re here to help.
-          </h2>
-          <p className="mt-4 text-text-secondary">
-            Not sure which plan is right for you?{" "}
-            <Link
-              href="/contact"
-              className="font-medium text-primary hover:text-primary-dark"
-            >
-              Get in touch
-            </Link>{" "}
-            and we&apos;ll help you find the perfect fit.
-          </p>
+          {/* FAQ teaser */}
+          <div className="mx-auto mt-24 max-w-2xl text-center">
+            <h2 className="text-2xl font-bold text-foreground">
+              Questions? We&apos;re here to help.
+            </h2>
+            <p className="mt-4 text-text-secondary">
+              Not sure which plan is right for you?{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-primary hover:text-primary-dark"
+              >
+                Get in touch
+              </Link>{" "}
+              and we&apos;ll help you find the perfect fit.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
