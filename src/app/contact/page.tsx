@@ -228,7 +228,7 @@ export default function ContactPage() {
               <div
                 className="cf-turnstile"
                 data-sitekey={
-                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"
+                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAACrO3ywEyUEn0cuo"
                 }
                 data-theme="light"
               />
